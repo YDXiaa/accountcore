@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.3.RELEASE</version>
+    </parent>
+
+    <groupId>paydemo</groupId>
+    <artifactId>accountcore</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>accountcore-facade</module>
+        <module>accountcore-service</module>
+        <module>accountcore-biz</module>
+        <module>accountcore-common</module>
+        <module>accountcore-manager</module>
+        <module>accountcore-dao</module>
+        <module>accountcore-web</module>
+    </modules>
+
+    <properties>
+        <system.moudle.version>1.0-SNAPSHOT</system.moudle.version>
+        <paydemo.util.version>1.0-SNAPSHOT</paydemo.util.version>
+        <spring.boot.version>2.3.3.RELEASE</spring.boot.version>
+        <dubbo.version>2.7.6</dubbo.version>
+        <nacos-client.version>1.3.3</nacos-client.version>
+        <lombok.version>1.18.4</lombok.version>
+        <mysql.version>8.0.16</mysql.version>
+        <mybatis.plus.version>3.4.2</mybatis.plus.version>
+        <druid.version>1.1.15</druid.version>
+        <gson.version>2.8.5</gson.version>
+        <guava.version>28.2-jre</guava.version>
+        <common-pool.version>2.0</common-pool.version>
+        <httpclient.version>4.5.2</httpclient.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--SystemMoudle-->
+            <dependency>
+                <groupId>paydemo</groupId>
+                <artifactId>accountcore-facade</artifactId>
+                <version>${system.moudle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>paydemo</groupId>
+                <artifactId>accountcore-service</artifactId>
+                <version>${system.moudle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>paydemo</groupId>
+                <artifactId>accountcore-biz</artifactId>
+                <version>${system.moudle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>paydemo</groupId>
+                <artifactId>accountcore-manager</artifactId>
+                <version>${system.moudle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>paydemo</groupId>
+                <artifactId>accountcore-dao</artifactId>
+                <version>${system.moudle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>paydemo</groupId>
+                <artifactId>accountcore-common</artifactId>
+                <version>${system.moudle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>paydemo</groupId>
+                <artifactId>accountcore-web</artifactId>
+                <version>${system.moudle.version}</version>
+            </dependency>
+
+            <!-- Util-->
+            <dependency>
+                <groupId>paydemo</groupId>
+                <artifactId>util</artifactId>
+                <version>${paydemo.util.version}</version>
+            </dependency>
+
+            <!--SpringBoot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <!-- Dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <!-- Dubbo Registry Nacos -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client.version}</version>
+            </dependency>
+
+            <!-- lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- MybatisPlus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <!-- Gson-->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
+            <!-- Google Guava-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!--HttpClient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
